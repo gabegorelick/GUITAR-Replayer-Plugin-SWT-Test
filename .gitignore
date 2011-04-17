@@ -1,0 +1,5 @@
+*.log
+
+/GUITAR-Default.STA
+
+# EGit needs trailing newline
