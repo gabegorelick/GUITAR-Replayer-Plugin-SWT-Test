@@ -1,7 +1,15 @@
+/bin
+/dist
+/doc
+/coverage
+/testresults
 *.log
-
 /GUITAR-Default.STA
-
 /.classpath
+/build.properties
+/lib/swtmodel.jar
+/lib/swtripper.jar
+/lib/swtrippertest.jar
+/lib/swtreplayer.jar
 
 # EGit needs trailing newline

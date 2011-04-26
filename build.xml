@@ -118,7 +118,7 @@
 	
 	<!-- Build and copy swtmodel.jar unless it's already here -->
 	<target name="build-model" depends="check-model" unless="swtmodel.present">
-		<ant antfile="build.xml" dir="${swtmodel.project.dir}" target="dist"/>
+		<ant antfile="build.xml" dir="${swtmodel.project.dir}" target="dist" inheritall="false"/>
 		<copy file="${swtmodel.project.dir}/dist/swtmodel.jar" todir="${lib.dir}"/>
 	</target>
 	
