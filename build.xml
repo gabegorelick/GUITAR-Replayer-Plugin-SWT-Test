@@ -58,6 +58,13 @@
 	<condition property="swt.jar" value="swt-mac.jar">
 		<os family="mac"/>
 	</condition>
+	<condition property="swt.jar" value="swt-windows-x86-64.jar">
+		<and>
+			<os family="windows"/>
+			<!-- this checks JVM architecture, which is all we care about anyway -->
+			<os arch="amd64"/>
+		</and>
+	</condition>
 	<condition property="swt.jar" value="swt-windows.jar">
 		<os family="windows"/>
 	</condition>
@@ -74,9 +81,12 @@
     	<pathelement location="${lib.dir}/junit.jar"/>
     	<pathelement location="${lib.dir}/xmlunit-1.3.jar"/>
     	<pathelement location="${coverage.dir}"/>
+    	
+    	<!-- TODO remove this if we remove dependency on jemmy -->
+    	<pathelement location="${lib.dir}/jemmy.jar"/>
         
         <!-- these are copied from other jobs by Jenkins before the build
-             or built from source in build-model and build-ripper -->
+             or built from source in build-model, build-ripper, etc. -->
     	<pathelement location="${swtmodel.jar}"/>
     	<pathelement location="${swtripper.jar}"/> 
     	<pathelement location="${swtreplayer.jar}"/>
