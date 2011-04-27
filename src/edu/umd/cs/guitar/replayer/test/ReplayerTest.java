@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import edu.umd.cs.guitar.replayer.SWTReplayer;
 import edu.umd.cs.guitar.replayer.SWTReplayerConfiguration;
-import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
+import edu.umd.cs.guitar.ripper.SWTGuitarRunner;
 import edu.umd.cs.guitar.ripper.test.aut.SWTMultiWindowDynamicApp;
 
 
@@ -24,6 +24,6 @@ public class ReplayerTest {
 		Thread guiThread = Thread.currentThread();
 		final SWTReplayer replayer = new SWTReplayer(config, guiThread);
 		
-		new SWTApplicationRunner(replayer).run();		
+		new SWTGuitarRunner(replayer).run();		
 	}
 }
