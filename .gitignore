@@ -12,5 +12,6 @@
 /lib/swtripper.jar
 /lib/swtrippertest.jar
 /lib/swtreplayer.jar
+/cobertura.ser
 
 # EGit needs trailing newline
