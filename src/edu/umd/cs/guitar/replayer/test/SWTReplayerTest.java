@@ -44,7 +44,7 @@ import edu.umd.cs.guitar.ripper.test.aut.SWTTabFolderApp;
 import edu.umd.cs.guitar.util.GUITARLog;
 
 
-public class ReplayerTest {
+public class SWTReplayerTest {
 	
 	private static String replay(Class<?> clazz, File testCase) {
 		SWTReplayerConfiguration config = new SWTReplayerConfiguration();		
