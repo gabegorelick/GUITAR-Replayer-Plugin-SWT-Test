@@ -5,6 +5,7 @@
 /testresults
 *.log
 /GUITAR-Default.STA
+/testoutput.STATE.xml
 /.classpath
 /build.properties
 /lib/swtmodel.jar

@@ -19,30 +19,134 @@
  */
 package edu.umd.cs.guitar.replayer.test;
 
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.custommonkey.xmlunit.DetailedDiff;
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Test;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import edu.umd.cs.guitar.replayer.SWTReplayer;
 import edu.umd.cs.guitar.replayer.SWTReplayerConfiguration;
 import edu.umd.cs.guitar.ripper.SWTGuitarRunner;
+import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorldApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTListApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTMultiWindowDynamicApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTTabFolderApp;
+import edu.umd.cs.guitar.util.GUITARLog;
 
 
 public class ReplayerTest {
-
-	@Test
-	public void testReplayer() {
-		SWTReplayerConfiguration config = new SWTReplayerConfiguration();
+	
+	private static String replay(Class<?> clazz, File testCase) {
+		SWTReplayerConfiguration config = new SWTReplayerConfiguration();		
+		config.setMainClass(clazz.getName());
 		
-		String autName = SWTMultiWindowDynamicApp.class.getSimpleName();
-		
-		config.setMainClass(SWTMultiWindowDynamicApp.class.getName());
+		String autName = clazz.getSimpleName();
+				
 		config.setGuiFile("guistructures/" + autName + ".GUI.xml");
 		config.setEfgFile("efgs/" + autName + ".EFG.xml");
-		config.setTestcase("testcases/" + autName + "/t_e1819273420_e1819273420_e1819273420_e1819273420_e1819273420.tst");
+		config.setTestcase(testCase.getAbsolutePath());
+		config.setGuiStateFile("testoutput.STATE.xml");
 		
-		Thread guiThread = Thread.currentThread();
-		final SWTReplayer replayer = new SWTReplayer(config, guiThread);
+		SWTReplayer replayer = new SWTReplayer(config);
+		new SWTGuitarRunner(replayer).run();
 		
-		new SWTGuitarRunner(replayer).run();		
+		return config.getGuiStateFile();
+	}
+	
+	private static String getExpectedFilename(Class<?> clazz, File testCase) {
+		String name = testCase.getName();
+		int extensionPos = name.lastIndexOf('.');
+		name = name.substring(0, extensionPos);
+		
+		return "expected/" + clazz.getSimpleName() + "/" + name + ".STATE.xml";
+	}
+		
+	private static void replayAndDiff(Class<?> clazz, File testCase) {
+		diff(getExpectedFilename(clazz, testCase), replay(clazz, testCase));
+	}
+	
+	// replay and diff all test cases for a given app
+	private static void replayAndDiffAll(Class<?> clazz) {
+		String autName = clazz.getSimpleName();
+		
+		File[] testcases = new File("testcases/" + autName).listFiles();
+		for (File testcase : testcases) {
+			replayAndDiff(clazz, testcase);	
+		}
+	}
+	
+	// useful if you want to replay an app but its GUI state isn't stable
+	private static void replayAll(Class<?> clazz) {
+		String autName = clazz.getSimpleName();
+		
+		File[] testcases = new File("testcases/" + autName).listFiles();
+		for (File testcase : testcases) {
+			replay(clazz, testcase);	
+		}
+	}
+	
+	private static void diff(String expectedFilename, String actualFilename) {
+		XMLUnit.setNormalizeWhitespace(true);
+
+		Document actual;
+		Document expected;
+		try {
+			// also called controlDoc by XMLUnit
+			expected = XMLUnit.buildTestDocument(new InputSource(
+					new FileReader(expectedFilename)));
+
+			// also called expectedDoc by XMLUnit
+			actual = XMLUnit.buildControlDocument(new InputSource(
+					new FileReader(actualFilename)));
+		} catch (SAXException e) {
+			// so calling methods don't have to declare this as checked
+			// exception
+			throw new AssertionError(e);
+		} catch (IOException e) {
+			throw new AssertionError(e);
+		}
+
+		DetailedDiff diff = new DetailedDiff(new Diff(expected, actual));
+		
+		for (Object o : diff.getAllDifferences()) {
+			GUITARLog.log.warn(o);
+		}
+		
+		assertTrue(expectedFilename + " failed", diff.similar());
+	}
+		
+	@Test
+	public void testSWTBasicApp() {
+		replayAndDiffAll(SWTBasicApp.class);
+	}
+		
+	@Test
+	public void testSWTMultiWindowDynamicApp() {
+		replayAll(SWTMultiWindowDynamicApp.class);
+	}
+	
+	@Test
+	public void testSWTHelloWorldApp() {
+		replayAndDiffAll(SWTHelloWorldApp.class);
+	}
+	
+	@Test
+	public void testSWTListApp() {
+		replayAndDiffAll(SWTListApp.class);
+	}
+	
+	@Test
+	public void testSWTTabFolderApp() {
+		replayAndDiffAll(SWTTabFolderApp.class);
 	}
 }
