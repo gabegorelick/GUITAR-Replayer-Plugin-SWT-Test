@@ -76,6 +76,7 @@ public class SWTReplayerTest {
 	}
 	
 	// replay and diff all test cases for a given app
+	@SuppressWarnings("unused")
 	private static void replayAndDiffAll(Class<?> clazz) {
 		String autName = clazz.getSimpleName();
 		
@@ -127,7 +128,7 @@ public class SWTReplayerTest {
 		
 	@Test
 	public void testSWTBasicApp() {
-		replayAndDiffAll(SWTBasicApp.class);
+		replayAll(SWTBasicApp.class);
 	}
 		
 	@Test
@@ -137,16 +138,16 @@ public class SWTReplayerTest {
 	
 	@Test
 	public void testSWTHelloWorldApp() {
-		replayAndDiffAll(SWTHelloWorldApp.class);
+		replayAll(SWTHelloWorldApp.class);
 	}
 	
 	@Test
 	public void testSWTListApp() {
-		replayAndDiffAll(SWTListApp.class);
+		replayAll(SWTListApp.class);
 	}
 	
 	@Test
 	public void testSWTTabFolderApp() {
-		replayAndDiffAll(SWTTabFolderApp.class);
+		replayAll(SWTTabFolderApp.class);
 	}
 }
