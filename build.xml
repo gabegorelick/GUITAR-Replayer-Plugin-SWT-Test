@@ -235,7 +235,7 @@
 		<apply executable="java">
 			<arg value="-cp"/>
 			<arg pathref="SWTReplayerTest.classpath"/>
-			<arg value="edu.umd.cs.guitar.replayer.SWTReplayerMain"/>
+			<arg value="edu.umd.cs.guitar.replayer.SitarReplayerMain"/>
 			<arg line="-c edu.umd.cs.guitar.ripper.test.aut.${app.name}"/>
 			<arg line="-e efgs/${app.name}.EFG.xml"/>
 			<arg line="-g guistructures/${app.name}.GUI.xml"/>
@@ -250,7 +250,7 @@
 			<arg value="-XstartOnFirstThread"/>
 			<arg value="-cp"/>
 			<arg pathref="SWTReplayerTest.classpath"/>
-			<arg value="edu.umd.cs.guitar.replayer.SWTReplayerMain"/>
+			<arg value="edu.umd.cs.guitar.replayer.SitarReplayerMain"/>
 			<arg line="-c edu.umd.cs.guitar.ripper.test.aut.${app.name}"/>
 			<arg line="-e efgs/${app.name}.EFG.xml"/>
 			<arg line="-g guistructures/${app.name}.GUI.xml"/>

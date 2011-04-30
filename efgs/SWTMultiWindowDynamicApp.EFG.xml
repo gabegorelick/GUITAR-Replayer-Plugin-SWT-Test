@@ -6,21 +6,21 @@
             <WidgetId>w1819273420</WidgetId>
             <Type>EXPAND</Type>
             <Initial>true</Initial>
-            <Action>edu.umd.cs.guitar.event.SWTDefaultAction</Action>
+            <Action>edu.umd.cs.guitar.event.SitarDefaultAction</Action>
         </Event>
         <Event>
             <EventId>e3843043048</EventId>
             <WidgetId>w3843043048</WidgetId>
             <Type>SYSTEM INTERACTION</Type>
             <Initial>true</Initial>
-            <Action>edu.umd.cs.guitar.event.SWTDefaultAction</Action>
+            <Action>edu.umd.cs.guitar.event.SitarDefaultAction</Action>
         </Event>
         <Event>
             <EventId>e2635454584</EventId>
             <WidgetId>w2635454584</WidgetId>
             <Type>SYSTEM INTERACTION</Type>
             <Initial>true</Initial>
-            <Action>edu.umd.cs.guitar.event.SWTDefaultAction</Action>
+            <Action>edu.umd.cs.guitar.event.SitarDefaultAction</Action>
         </Event>
     </Events>
     <EventGraph>

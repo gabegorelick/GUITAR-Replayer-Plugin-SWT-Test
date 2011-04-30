@@ -33,9 +33,9 @@ import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import edu.umd.cs.guitar.replayer.SWTReplayer;
-import edu.umd.cs.guitar.replayer.SWTReplayerConfiguration;
-import edu.umd.cs.guitar.ripper.SWTGuitarRunner;
+import edu.umd.cs.guitar.replayer.SitarReplayer;
+import edu.umd.cs.guitar.replayer.SitarReplayerConfiguration;
+import edu.umd.cs.guitar.ripper.SitarRunner;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorldApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTListApp;
@@ -44,10 +44,10 @@ import edu.umd.cs.guitar.ripper.test.aut.SWTTabFolderApp;
 import edu.umd.cs.guitar.util.GUITARLog;
 
 
-public class SWTReplayerTest {
+public class SitarReplayerTest {
 	
 	private static String replay(Class<?> clazz, File testCase) {
-		SWTReplayerConfiguration config = new SWTReplayerConfiguration();		
+		SitarReplayerConfiguration config = new SitarReplayerConfiguration();		
 		config.setMainClass(clazz.getName());
 		
 		String autName = clazz.getSimpleName();
@@ -57,8 +57,8 @@ public class SWTReplayerTest {
 		config.setTestcase(testCase.getAbsolutePath());
 		config.setGuiStateFile("testoutput.STATE.xml");
 		
-		SWTReplayer replayer = new SWTReplayer(config);
-		new SWTGuitarRunner(replayer).run();
+		SitarReplayer replayer = new SitarReplayer(config);
+		new SitarRunner(replayer).run();
 		
 		return config.getGuiStateFile();
 	}

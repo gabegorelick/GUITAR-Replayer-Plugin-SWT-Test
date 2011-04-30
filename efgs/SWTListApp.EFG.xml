@@ -6,7 +6,7 @@
             <WidgetId>w936199260</WidgetId>
             <Type>SYSTEM INTERACTION</Type>
             <Initial>true</Initial>
-            <Action>edu.umd.cs.guitar.event.SWTDefaultAction</Action>
+            <Action>edu.umd.cs.guitar.event.SitarDefaultAction</Action>
         </Event>
     </Events>
     <EventGraph>

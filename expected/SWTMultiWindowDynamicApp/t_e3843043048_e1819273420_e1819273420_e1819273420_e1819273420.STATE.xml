@@ -95,7 +95,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -139,7 +139,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -323,7 +323,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -374,7 +374,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -760,7 +760,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -804,7 +804,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -1322,7 +1322,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -1366,7 +1366,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -1884,7 +1884,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -1928,7 +1928,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -2512,7 +2512,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -2556,7 +2556,7 @@
         </Property>
         <Property>
             <Name>ReplayableAction</Name>
-            <Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
+            <Value>edu.umd.cs.guitar.event.SitarDefaultAction</Value>
         </Property>
         <Property>
             <Name>Title</Name>
