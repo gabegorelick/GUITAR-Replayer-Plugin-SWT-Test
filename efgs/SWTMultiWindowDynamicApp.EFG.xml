@@ -2,16 +2,9 @@
 <EFG>
     <Events>
         <Event>
-            <EventId>e1819273420</EventId>
-            <WidgetId>w1819273420</WidgetId>
-            <Type>EXPAND</Type>
-            <Initial>true</Initial>
-            <Action>edu.umd.cs.guitar.event.SitarDefaultAction</Action>
-        </Event>
-        <Event>
             <EventId>e3843043048</EventId>
             <WidgetId>w3843043048</WidgetId>
-            <Type>SYSTEM INTERACTION</Type>
+            <Type>UNRESTRICED FOCUS</Type>
             <Initial>true</Initial>
             <Action>edu.umd.cs.guitar.event.SitarDefaultAction</Action>
         </Event>
@@ -26,18 +19,11 @@
     <EventGraph>
         <Row>
             <E>1</E>
-            <E>2</E>
-            <E>2</E>
+            <E>1</E>
         </Row>
         <Row>
             <E>1</E>
-            <E>0</E>
-            <E>0</E>
-        </Row>
-        <Row>
             <E>1</E>
-            <E>0</E>
-            <E>0</E>
         </Row>
     </EventGraph>
 </EFG>
