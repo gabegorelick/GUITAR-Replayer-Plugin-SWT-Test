@@ -43,7 +43,12 @@ import edu.umd.cs.guitar.ripper.test.aut.SWTMultiWindowDynamicApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTTabFolderApp;
 import edu.umd.cs.guitar.util.GUITARLog;
 
-
+/**
+ * Test {@link SitarReplayer}.
+ * 
+ * @author Gabe Gorelick
+ * 
+ */
 public class SitarReplayerTest {
 	
 	private static String replay(Class<?> clazz, File testCase) {
@@ -125,27 +130,42 @@ public class SitarReplayerTest {
 		
 		assertTrue(expectedFilename + " failed", diff.similar());
 	}
-		
+	
+	/**
+	 * Test replaying {@link SWTBasicApp}.
+	 */
 	@Test
 	public void testSWTBasicApp() {
 		replayAll(SWTBasicApp.class);
 	}
-		
+	
+	/**
+	 * Test replaying {@link SWTMultiWindowDynamicApp}.
+	 */
 	@Test
 	public void testSWTMultiWindowDynamicApp() {
 		replayAll(SWTMultiWindowDynamicApp.class);
 	}
 	
+	/**
+	 * Test replaying {@link SWTHelloWorldApp}.
+	 */
 	@Test
 	public void testSWTHelloWorldApp() {
 		replayAll(SWTHelloWorldApp.class);
 	}
 	
+	/**
+	 * Test replaying {@link SWTListApp}.
+	 */
 	@Test
 	public void testSWTListApp() {
 		replayAll(SWTListApp.class);
 	}
 	
+	/**
+	 * Test replaying {@link SWTTabFolderApp}.
+	 */
 	@Test
 	public void testSWTTabFolderApp() {
 		replayAll(SWTTabFolderApp.class);
